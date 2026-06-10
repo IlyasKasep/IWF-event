@@ -27,14 +27,17 @@ WORKDIR /app
 # Copy application files
 COPY . .
 
+# Ensure SQLite database file exists as a fallback
+RUN mkdir -p database && touch database/database.sqlite
+
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 # Install Node dependencies and build assets
 RUN npm ci && npm run build
 
-# Change ownership of storage and bootstrap cache
-RUN chown -R www-data:www-data storage bootstrap/cache
+# Change ownership of storage, database, and bootstrap cache
+RUN chown -R www-data:www-data storage database bootstrap/cache
 
-# Expose port and start command
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+# Expose port and start command (runs migrations automatically)
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT
