@@ -15,26 +15,26 @@ class SponsorSeeder extends Seeder
         Sponsor::truncate();
 
         Sponsor::create([
-            'name' => 'Bronze',
-            'tier' => 'bronze',
-            'price' => 5000000,
-            'description' => 'Penempatan logo (kecil), penyebutan oleh MC, dokumentasi media sosial kolektif, dan sertifikat resmi mitra.',
-            'logo' => null,
-        ]);
-
-        Sponsor::create([
-            'name' => 'Gold',
-            'tier' => 'gold',
-            'price' => 12000000,
-            'description' => 'Penempatan logo (sedang), dedicated post di media sosial, product review/ad-libs utama, dan sertifikat apresiasi eksklusif.',
-            'logo' => null,
-        ]);
-
-        Sponsor::create([
-            'name' => 'Platinum',
+            'name' => 'Bank Mandiri',
             'tier' => 'platinum',
             'price' => 20000000,
-            'description' => 'Penempatan logo (besar), kolaborasi konten penuh, slot presentasi brand pada webinar, product sampling, dan kemitraan tahunan.',
+            'description' => 'Kemitraan Utama Sponsor Platinum IWF 2026.',
+            'logo' => null,
+        ]);
+
+        Sponsor::create([
+            'name' => 'Indofood',
+            'tier' => 'gold',
+            'price' => 12000000,
+            'description' => 'Kemitraan Gold Sponsor IWF 2026.',
+            'logo' => null,
+        ]);
+
+        Sponsor::create([
+            'name' => 'Kopi Kenangan',
+            'tier' => 'bronze',
+            'price' => 5000000,
+            'description' => 'Kemitraan Bronze Sponsor IWF 2026.',
             'logo' => null,
         ]);
     }

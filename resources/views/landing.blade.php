@@ -1004,20 +1004,33 @@
         </div>
 
         <div class="row g-4">
-            @forelse ($sponsors as $sponsor)
-                <div class="col-lg-4">
-                    <div class="sponsor-card" style="{{ $sponsor->tier === 'gold' ? 'border: 2px solid var(--primary-color);' : '' }}">
-                        @if($sponsor->tier === 'gold')
-                            <div class="badge bg-primary mb-2" style="font-size: 10px;">RECOMMENDED</div>
-                        @endif
-                        <h4>{{ $sponsor->name }}</h4>
-                        <div class="sponsor-price">Rp{{ number_format($sponsor->price, 0, ',', '.') }}</div>
-                        <p>{{ $sponsor->description }}</p>
-                    </div>
+            <!-- Bronze Package -->
+            <div class="col-lg-4">
+                <div class="sponsor-card">
+                    <h4>Bronze Sponsor</h4>
+                    <div class="sponsor-price">Rp5.000.000</div>
+                    <p>Penempatan logo (kecil), penyebutan oleh MC, dokumentasi media sosial kolektif, dan sertifikat resmi mitra.</p>
                 </div>
-            @empty
-                <div class="text-center text-muted">Belum ada paket sponsor terdaftar.</div>
-            @endforelse
+            </div>
+
+            <!-- Gold Package -->
+            <div class="col-lg-4">
+                <div class="sponsor-card" style="border: 2px solid var(--primary-color);">
+                    <div class="badge bg-primary mb-2" style="font-size: 10px;">RECOMMENDED</div>
+                    <h4>Gold Sponsor</h4>
+                    <div class="sponsor-price">Rp12.000.000</div>
+                    <p>Penempatan logo (sedang), dedicated post di media sosial, product review/ad-libs utama, dan sertifikat apresiasi eksklusif.</p>
+                </div>
+            </div>
+
+            <!-- Platinum Package -->
+            <div class="col-lg-4">
+                <div class="sponsor-card">
+                    <h4>Platinum Sponsor</h4>
+                    <div class="sponsor-price">Rp20.000.000</div>
+                    <p>Penempatan logo (besar), kolaborasi konten penuh, slot presentasi brand pada webinar, product sampling, dan kemitraan tahunan.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
