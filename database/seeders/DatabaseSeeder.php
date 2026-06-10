@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Speaker;
+use App\Models\Sponsor;
+use App\Models\MediaPartner;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -33,10 +36,17 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $this->call([
-            SpeakerSeeder::class,
-            SponsorSeeder::class,
-            MediaPartnerSeeder::class,
-        ]);
+        if (Speaker::count() === 0) {
+            $this->call([SpeakerSeeder::class]);
+        }
+
+        if (Sponsor::count() === 0) {
+            // Note: SponsorSeeder truncates the table first, so we only run if count is 0
+            $this->call([SponsorSeeder::class]);
+        }
+
+        if (MediaPartner::count() === 0) {
+            $this->call([MediaPartnerSeeder::class]);
+        }
     }
 }

@@ -39,5 +39,5 @@ RUN npm ci && npm run build
 # Change ownership of storage, database, and bootstrap cache
 RUN chown -R www-data:www-data storage database bootstrap/cache
 
-# Expose port and start command (runs migrations automatically)
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT
+# Expose port and start command (runs migrations and seeds automatically)
+CMD php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=$PORT
