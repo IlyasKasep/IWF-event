@@ -1165,13 +1165,15 @@
                     <div class="row g-4 text-start justify-content-center">
                         <div class="col-md-5 offset-md-1">
                             <p class="mb-2"><strong>Instagram:</strong> <a href="https://instagram.com/samasaya.ideas" target="_blank" class="text-primary text-decoration-none">@samasaya.ideas</a></p>
-                            <p class="mb-2"><strong>WhatsApp:</strong> <span class="text-dark font-monospace">+62 822-9598-0054</span></p>
+                            <p class="mb-2"><strong>WhatsApp:</strong> <a href="https://wa.me/6282295980054" target="_blank" class="text-primary text-decoration-none font-monospace">+62 822-9598-0054</a></p>
                             <p class="mb-2"><strong>Narahubung:</strong> <span class="text-dark">Kak Rofi</span></p>
                         </div>
                         <div class="col-md-5">
                             <p class="mb-0"><strong>Alamat Kantor:</strong></p>
-                            <p class="text-muted mb-0" style="font-size: 13px;">
-                                Ruko Puri Dago / LPKBYE Building, Jalan Terusan Jakarta No. 404, Sukamiskin, Arcamanik, Kota Bandung.
+                            <p class="mb-0" style="font-size: 13px;">
+                                <a href="https://maps.google.com/?q=Ruko+Puri+Dago+Jalan+Terusan+Jakarta+No.+404+Sukamiskin+Arcamanik+Kota+Bandung" target="_blank" class="text-primary text-decoration-none">
+                                    Ruko Puri Dago / LPKBYE Building, Jalan Terusan Jakarta No. 404, Sukamiskin, Arcamanik, Kota Bandung.
+                                </a>
                             </p>
                         </div>
                     </div>
