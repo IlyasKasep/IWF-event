@@ -484,10 +484,38 @@
             box-shadow: 0 8px 20px rgba(0, 87, 217, 0.06);
         }
 
+        .logo-item.has-logo {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            min-width: auto;
+            height: auto;
+        }
+
+        .logo-item.has-logo:hover {
+            transform: scale(1.05);
+            box-shadow: none;
+        }
+
         .logo-item img {
             max-height: 40px;
             max-width: 120px;
             object-fit: contain;
+        }
+
+        .logo-item.has-logo img {
+            max-height: 55px;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item.has-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         .logo-item-text {
@@ -1025,7 +1053,7 @@
         <div class="logo-scroller-track track-left-to-right">
             @if ($sponsors->count() > 0)
                 @foreach ($sponsors->concat($sponsors)->concat($sponsors) as $sponsor)
-                    <div class="logo-item">
+                    <div class="logo-item {{ $sponsor->logo ? 'has-logo' : '' }}">
                         @if ($sponsor->logo)
                             <img src="{{ asset($sponsor->logo) }}" alt="{{ $sponsor->name }}">
                         @else
@@ -1046,7 +1074,7 @@
         <div class="logo-scroller-track track-right-to-left">
             @if ($mediaPartners->count() > 0)
                 @foreach ($mediaPartners->concat($mediaPartners)->concat($mediaPartners) as $partner)
-                    <div class="logo-item">
+                    <div class="logo-item {{ $partner->logo ? 'has-logo' : '' }}">
                         @if ($partner->logo)
                             <img src="{{ asset($partner->logo) }}" alt="{{ $partner->name }}">
                         @else
